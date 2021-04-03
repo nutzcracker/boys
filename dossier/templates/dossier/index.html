@@ -1,0 +1,9 @@
+{% if dossier_list %}
+    <ul>
+    {% for dossier in dossier_list %}
+        <li><a href="{% url 'detail' dossier.id %}">{{ dossier.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No dossiers are available.</p>
+{% endif %}
