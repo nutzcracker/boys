@@ -1,0 +1,6 @@
+<p>{{ prop.name}}</p>
+{% if prop.photo %}
+	<p><img src="{{ prop.photo.url }}"></p>
+{% endif %}
+<p>{{ prop.description }}</p>
+<p><a href="/dossier/{{ dossier.id }}">{{ dossier.name }}</a> хозяин ЭТОГО</p>

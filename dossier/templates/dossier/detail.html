@@ -2,3 +2,11 @@
 {% if dossier.photo %}
 	<img src="{{ dossier.photo.url }}">
 {% endif %}
+{% for prop in props %}
+	{{ prop.name }}
+	<img src="{{ prop.photo.url }}">
+	{{ prop.description }}
+{% endfor %}
+{% for cat in cats %}
+	<a href="/category/{{ cat.id }}">{{ cat.cat_type }} </a>
+{% endfor %}

@@ -6,8 +6,6 @@ class Dossier(models.Model):
 	name = models.CharField(max_length=100, verbose_name='Имя')
 	photo = models.ImageField(upload_to='photos', blank=True, verbose_name='Фото')
 	description = models.TextField(null=True, blank=True, verbose_name='Описание')
-	prop = models.OneToOneField('Property', null=True, on_delete=models.PROTECT, verbose_name='Имущество')
-	cat = models.ForeignKey('Category', null=True, on_delete=models.PROTECT, verbose_name='Категория граждан')
 
 	def __str__(self):
 		return self.name
@@ -17,11 +15,9 @@ class Dossier(models.Model):
 		verbose_name = 'Кент'
 		ordering = ['name']
 
-
-
 class Category(models.Model):
-	cat_type = models.CharField(max_length=200)
-	cat = models.ForeignKey('Dossier', null=True, on_delete=models.PROTECT, verbose_name='Категория граждан')
+	cat_type = models.CharField(max_length=200, verbose_name='Категория граждан')
+	dossier = models.ManyToManyField('Dossier', blank=True)
 
 	def __str__(self):
 		return self.cat_type
@@ -34,15 +30,15 @@ class Property(models.Model):
 	name = models.CharField(max_length=50, verbose_name='Название')
 	photo = models.ImageField(upload_to='photos', blank=True, verbose_name='Фото')
 	description = models.TextField(null=True, blank=True, verbose_name='Описание')
+	dossier = models.ForeignKey('Dossier', null=True, on_delete=models.PROTECT, verbose_name='Досье')
 
 	def __str__(self):
 		return self.name
 
 	class Meta:
 		verbose_name = 'Экипировка'
+		verbose_name_plural = 'Экипировки'
 		ordering = ['name']
-
-
 
 def __init__(self, *args, **kwargs):
 	super(Dossier, self).__init__(self, *args, **kwargs)

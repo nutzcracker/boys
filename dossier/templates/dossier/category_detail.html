@@ -1,0 +1,6 @@
+<p>{{ category.cat_type }}</p>
+<p>
+	{% for dossier in dossiers %}
+		<a href="/dossier/{{ dossier.id }}">{{ dossier.name }}</a>
+	{% endfor %}
+</p>
