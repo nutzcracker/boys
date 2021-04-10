@@ -19,11 +19,14 @@ from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from . import settings
+from dossier import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('dossier/', include('dossier.urls'))
+    path('dossier/', include('dossier.urls')),
+    path('category/<int:category_id>', views.category_detail, name='categories'),
+    path('property/<int:property_id>', views.property_detail, name='Имущество')
 ]
  
 urlpatterns += staticfiles_urlpatterns()
