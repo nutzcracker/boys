@@ -26,8 +26,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('dossier/', include('dossier.urls')),
     path('category/<int:category_id>', views.category_detail, name='categories'),
-    path('property/<int:property_id>', views.property_detail, name='Имущество')
-]
+    path('property/<int:property_id>', views.property_detail, name='property'),
+    ]
  
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

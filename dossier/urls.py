@@ -17,7 +17,9 @@ from django.urls import path
 
 from . import views
 
+
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='index'),
     path('<int:dossier_id>', views.detail, name='detail'),
+    path('add/', views.DossierCreateView.as_view(), name='add')
 ]

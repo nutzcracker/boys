@@ -2,8 +2,15 @@ from django.shortcuts import render, get_object_or_404
 
 from .models import Category, Dossier, Property
 
+from django.views.generic.edit import CreateView
 
-def index(request):
+from .forms import DossierForm, PropertyForm
+
+from django.urls import reverse_lazy
+
+
+
+def index(request):	
 	dossier_list = Dossier.objects.all()
 	context = {
 		'dossier_list': dossier_list,
@@ -25,3 +32,13 @@ def property_detail(request, property_id):
 	prop = get_object_or_404(Property, pk=property_id)
 	dossier = get_object_or_404(Dossier, property__id=property_id)
 	return render(request, 'dossier/property.html', {'prop':prop, 'dossier':dossier})
+
+class DossierCreateView(CreateView):
+	template_name = 'dossier/create.html'
+	form_class = DossierForm
+	success_url = '../'
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context['categories'] = Category.objects.all()
+		return context

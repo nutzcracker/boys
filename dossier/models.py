@@ -11,20 +11,20 @@ class Dossier(models.Model):
 		return self.name
 
 	class Meta:
-		verbose_name_plural = 'Кенты'
-		verbose_name = 'Кент'
+		verbose_name_plural = 'Объект'
+		verbose_name = 'Объект'
 		ordering = ['name']
 
 class Category(models.Model):
-	cat_type = models.CharField(max_length=200, verbose_name='Категория граждан')
+	cat_type = models.CharField(max_length=200, verbose_name='Класс объекта')
 	dossier = models.ManyToManyField('Dossier', blank=True)
 
 	def __str__(self):
 		return self.cat_type
 
 	class Meta:
-		verbose_name_plural = 'Разряды кентов'
-		verbose_name = 'Разряд кента'
+		verbose_name_plural = 'Класс объекта'
+		verbose_name = 'Класс объекта'
 
 class Property(models.Model):
 	name = models.CharField(max_length=50, verbose_name='Название')
@@ -36,8 +36,8 @@ class Property(models.Model):
 		return self.name
 
 	class Meta:
-		verbose_name = 'Экипировка'
-		verbose_name_plural = 'Экипировки'
+		verbose_name = 'Снаряжение'
+		verbose_name_plural = 'Снаряжения'
 		ordering = ['name']
 
 def __init__(self, *args, **kwargs):
