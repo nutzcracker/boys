@@ -19,9 +19,9 @@ def index(request):
 
 def detail(request, dossier_id):
 	dossier = get_object_or_404(Dossier, pk=dossier_id)
-	cats = Category.objects.filter(dossier__id=dossier.id)
+	category = Category.objects.filter(dossier__id=dossier.id)
 	props = Property.objects.filter(dossier__id=dossier.id)
-	return render(request, 'dossier/detail.html', {'dossier': dossier, 'props': props, 'cats': cats})
+	return render(request, 'dossier/detail.html', {'dossier': dossier, 'props': props, 'category': category})
 
 def category_detail(request, category_id):
 	category = get_object_or_404(Category, pk=category_id)
@@ -36,9 +36,9 @@ def property_detail(request, property_id):
 class DossierCreateView(CreateView):
 	template_name = 'dossier/create.html'
 	form_class = DossierForm
-	success_url = '../'
+	success_url = reverse_lazy('index')
 
-	def get_context_data(self, **kwargs):
-		context = super().get_context_data(**kwargs)
-		context['categories'] = Category.objects.all()
-		return context
+	# def get_context_data(self, **kwargs):
+	# 	context = super().get_context_data(**kwargs)
+	# 	context['categories'] = Category.objects.all()
+	# 	return context

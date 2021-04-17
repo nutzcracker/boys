@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Главная :: Список секретных объектов</title>
+	</head>
+	<body>
+		<h1>Объекты</h1>
+		<div>
+			{% if dossier_list %}
+		    <ul>
+		    {% for dossier in dossier_list %}
+		        <li><a href="{% url 'detail' dossier.id %}">{{ dossier.name }}</a></li>
+		    {% endfor %}
+		    </ul>
+			{% else %}
+		    	<p>No dossiers are available.</p>
+			{% endif %}
+		</div>
+	</body>
+</html>
+

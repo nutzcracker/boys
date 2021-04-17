@@ -1,21 +1,14 @@
-<html xml:lang="ru" lang="ru"><head>
+<html xml:lang="ru" lang="ru">
+<head>
     <title>Объекты</title>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta http-equiv="content-language" content="ru">
     <style type="text/css" id="internal-style">
-        
-
-
-
-        
                 
         /* theme */
                     @import url(http://d3g0gp89917ko0.cloudfront.net/v--3e3a6f7dbcc9/common--theme/base/css/style.css);
                     @import url(http://scp-ru.wdfiles.com/local--code/component:theme2/1);
             </style>
-    
-        
-        
         
     <link rel="shortcut icon" href="/local--favicon/favicon.gif">
     <link rel="icon" type="image/gif" href="/local--favicon/favicon.gif">
@@ -23,67 +16,33 @@
             <link rel="apple-touch-icon" href="/common--images/apple-touch-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="72x72" href="/common--images/apple-touch-icon-72x72.png">
         <link rel="apple-touch-icon" sizes="114x114" href="/common--images/apple-touch-icon-114x114.png">
-        
-           
 
 </head>
 <body id="html-body">
 <div id="skrollr-body">
 <a name="page-top"></a>
 
-
-
-
-
 <div id="container-wrap-wrap">
     <div id="container-wrap">
         <div id="container">
             <div id="header">
               <h1><a href="/"><span>База данных</span></a></h1>
-                
+
                     <h2><span>Краснодарские дебики</span></h2>
-                
-                
-                
-                
-                
-                
-                
+
                     <div id="top-bar">
-                        
 
 <div class="list-pages-box">    <div class="list-pages-item">
-
-
-
-
 </div>
-    
-    
-    
     </div>
-
-    
-    
-    
     </div></div>
-
                     </div>
                 
                 
             
             <div id="content-wrap">
-                
-                    <div id="side-bar">
-                        
-
-
-                        
-
-
-
+                    <div id="side-bar">                        
 <div class="side-block">
-
 <div class="heading">
 <p>Меню</p>
 </div>
@@ -91,55 +50,13 @@
 
 <div class="menu-item"><img src="http://scp-ru.wdfiles.com/local--files/nav:side/series.png" alt="series.png" class="image"><a href="/scp-series-3">Объекты III</a> <span class="sub-text">(2000-2999)</span></div>
 </div>
-
-
-
-    
-    
-    
     </div></div>
-
-                        
-
-
                     </div>
-                
-                
-                <!-- google_ad_section_end -->
-                
-                <div id="main-content">
-                    <div id="action-area-top"></div>
-                    
-                    
-                        <div id="page-title">
-                            Досье на объект {{ dossier.name}}
-                        </div>
-                    
-                    <div id="page-content">
-                        
-
-
-<div class="scp-image-block block-right" style="width:300px;"><img src="{{ dossier.photo.url }}" style="width:300px;" alt="SCP-003a-new.jpg" class="image">
-<div class="scp-image-caption" style="width:300px;">
-<p>Фото объекта {{ dossier.name }}</p>
-</div>
-</div>
-<p><strong>Объект №:</strong> {{ dossier.id }}</p>
-<p><strong>Класс объекта:</strong> <a href="/category/{{ Category.id }}">{{ Category.cat_type }} </a></p>
-<p><strong>Особые условия содержания:</strong> Надо оно?</p>
-<p><strong>Описание:</strong> {{ dossier.description }}</p>
+{% block content %}
+{% endblock %}
 
 <hr>
-
-<blockquote>
-<p><strong>Стенограмма Отчёта об инциденте.</strong><br>
-
-<p>Надо?</p>
-</blockquote>
+<p style="text-align: center;"><span style="font-size:90%;"><strong>« <a href="/scp-002">SCP-002</a> | Объект {{ dossier.id }} | <a href="/scp-004">SCP-004</a> »</strong></span></p></div>
 </div>
-
-</div>
-</div>
-<hr>
-<p style="text-align: center;"><span style="font-size:90%;"><strong>« <a href="/scp-002">SCP-002</a> | Объект {{ dossier.id }} | <a href="/scp-004">SCP-004</a> »</strong></span></p>
-</div>
+</body>
+</html>
