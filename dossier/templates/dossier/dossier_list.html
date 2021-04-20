@@ -6,16 +6,21 @@
                     
                     
                         <div id="page-title" style="text-align: center;">
-                            Добавление объекта в базу данных
+                            Список объектов
                         </div>
                     
                     <div id="page-content">
 
 
-<p><form method="post" enctype="multipart/form-data">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<input type="submit" name="Добавить" value="Добавить дебика">
-		</form></p>
-</div>
+<p><div>
+			{% if dossier_list %}
+		    <ul>
+		    {% for dossier in dossier_list %}
+		        <li><a href="{% url 'detail' dossier.id %}">{{ dossier.name }}</a></li>
+		    {% endfor %}
+		    </ul>
+			{% else %}
+		    	<p>No dossiers are available.</p>
+			{% endif %}
+		</div></p>
 {% endblock %}

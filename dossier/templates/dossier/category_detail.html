@@ -1,6 +1,24 @@
-<p>{{ category.cat_type }}</p>
+{% extends "layout/basic.html" %}
+
+{% block content %}
+<div id="main-content">
+                    <div id="action-area-top"></div>
+                    
+                    
+                        <div id="page-title" style="text-align: center;">
+                            Особенность {{ category.cat_type }}
+                        </div>
+                    
+                    <div id="page-content">
+
+
+<p><strong>Описание: </strong> {{ category.cat_description }}</p>
 <p>
+	<strong>Список объектов из данной категории:</strong>
+	<ul>
 	{% for dossier in dossiers %}
-		<a href="/dossier/{{ dossier.id }}">{{ dossier.name }}</a>
+		<li><a href="/dossier/{{ dossier.id }}">{{ dossier.name }}</a></li>
 	{% endfor %}
-</p>
+</ul></p>
+</div>
+{% endblock %}

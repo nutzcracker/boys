@@ -17,7 +17,8 @@ class Dossier(models.Model):
 		ordering = ['name']
 
 class Category(models.Model):
-	cat_type = models.CharField(max_length=200, verbose_name='Класс объекта')
+	cat_type = models.CharField(max_length=200, verbose_name='Особенность')
+	cat_description = models.CharField(max_length=200,null=True, verbose_name='Описание особенности')
 	dossier = models.ManyToManyField('Dossier', blank=True)
 	
 

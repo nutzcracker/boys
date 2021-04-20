@@ -10,18 +10,18 @@ from django.urls import reverse_lazy
 
 
 
-def index(request):	
+def dossier_list(request):	
 	dossier_list = Dossier.objects.all()
 	context = {
 		'dossier_list': dossier_list,
 	}
-	return render(request, 'dossier/index.html', context)
+	return render(request, 'dossier/dossier_list.html', context)
 
 def detail(request, dossier_id):
 	dossier = get_object_or_404(Dossier, pk=dossier_id)
-	category = Category.objects.filter(dossier__id=dossier.id)
+	categories = Category.objects.filter(dossier__id=dossier.id)
 	props = Property.objects.filter(dossier__id=dossier.id)
-	return render(request, 'dossier/detail.html', {'dossier': dossier, 'props': props, 'category': category})
+	return render(request, 'dossier/detail.html', {'dossier': dossier, 'props': props, 'categories': categories})
 
 def category_detail(request, category_id):
 	category = get_object_or_404(Category, pk=category_id)
@@ -42,3 +42,9 @@ class DossierCreateView(CreateView):
 	# 	context = super().get_context_data(**kwargs)
 	# 	context['categories'] = Category.objects.all()
 	# 	return context
+def index(request):
+	return render(request, 'dossier/index.html')
+
+def category_list(request):
+	category_list = Category.objects.all()
+	return render(request, 'dossier/category_list.html', {'category_list': category_list})

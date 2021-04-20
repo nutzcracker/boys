@@ -1,6 +1,26 @@
-<p>{{ prop.name}}</p>
+{% extends "layout/basic.html" %}
+
+{% block content %}
+<div id="main-content">
+                    <div id="action-area-top"></div>
+                    
+                    
+                        <div id="page-title" style="text-align: center;">
+                            Снаряжение {{ dossier.name }}
+                        </div>
+                    
+                    <div id="page-content">
+
+
+<p><p><strong>Название:</strong> {{ prop.name}}</p>
 {% if prop.photo %}
-	<p><img src="{{ prop.photo.url }}"></p>
+	<div class="scp-image-block block-right" style="width:300px;"><img src="{{ prop.photo.url }}" style="width:300px;" alt="SCP-003a-new.jpg" class="image">
+
+<div class="scp-image-caption" style="width:300px;">
+	<p>Фото {{ prop.name }}</p>
 {% endif %}
-<p>{{ prop.description }}</p>
-<p><a href="/dossier/{{ dossier.id }}">{{ dossier.name }}</a> хозяин ЭТОГО</p>
+</div>
+</div>
+<p><strong>Описание:</strong> {{ prop.description }}</p></p>
+</div>
+{% endblock %}

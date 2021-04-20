@@ -1,6 +1,8 @@
+{% load static %}
+
 <html xml:lang="ru" lang="ru">
 <head>
-    <title>Объекты</title>
+    <title>База данных</title>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8">
     <meta http-equiv="content-language" content="ru">
     <style type="text/css" id="internal-style">
@@ -9,13 +11,16 @@
                     @import url(http://d3g0gp89917ko0.cloudfront.net/v--3e3a6f7dbcc9/common--theme/base/css/style.css);
                     @import url(http://scp-ru.wdfiles.com/local--code/component:theme2/1);
             </style>
-        
-    <link rel="shortcut icon" href="/local--favicon/favicon.gif">
-    <link rel="icon" type="image/gif" href="/local--favicon/favicon.gif">
-    
-            <link rel="apple-touch-icon" href="/common--images/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/common--images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/common--images/apple-touch-icon-114x114.png">
+    <!-- <style type="text/css" id="internal-style">
+                
+        /* theme */
+                    @import "static/style1.css";
+                    @import "static/style.css";
+            </style> -->
+     
+    <!-- <link rel="stylesheet" type="text/css" id="internal-style"
+        href="{% static 'style.css' %}"> -->
+
 
 </head>
 <body id="html-body">
@@ -46,17 +51,17 @@
 <div class="heading">
 <p>Меню</p>
 </div>
-<div class="menu-item"><a href="{% url 'index' %}">Список объектов</a></div>
-
-<div class="menu-item"><img src="http://scp-ru.wdfiles.com/local--files/nav:side/series.png" alt="series.png" class="image"><a href="/scp-series-3">Объекты III</a> <span class="sub-text">(2000-2999)</span></div>
+<div class="menu-item"><a href="{% url 'index' %}">Главная страница</a></div>
+<div class="menu-item"><a href="{% url 'add' %}">Создание нового объекта</a></div>
+<div class="menu-item"><a href="{% url 'dossier_list' %}">Список объектов</a></div>
+<div class="menu-item"><a href="{% url 'category_list' %}">Список особенностей</a></div>
 </div>
     </div></div>
                     </div>
 {% block content %}
 {% endblock %}
 
-<hr>
-<p style="text-align: center;"><span style="font-size:90%;"><strong>« <a href="/scp-002">SCP-002</a> | Объект {{ dossier.id }} | <a href="/scp-004">SCP-004</a> »</strong></span></p></div>
+
 </div>
 </body>
 </html>

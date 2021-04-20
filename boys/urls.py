@@ -27,7 +27,8 @@ urlpatterns = [
     path('dossier/', include('dossier.urls')),
     path('category/<int:category_id>', views.category_detail, name='categories'),
     path('property/<int:property_id>', views.property_detail, name='property'),    
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('category', views.category_list, name='category_list')
     ,
     ]
  
