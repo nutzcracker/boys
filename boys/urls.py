@@ -28,9 +28,11 @@ urlpatterns = [
     path('category/<int:category_id>', views.category_detail, name='categories'),
     path('property/<int:property_id>', views.property_detail, name='property'),    
     path('', views.index, name='index'),
-    path('category', views.category_list, name='category_list')
-    ,
+    path('category/', views.category_list, name='category_list'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    
     ]
  
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

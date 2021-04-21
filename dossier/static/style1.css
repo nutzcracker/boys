@@ -100,7 +100,7 @@ body {
     color: #333;
 }
 div#container-wrap {
-    background: url(/local--files/component:theme/body_bg.png) top left repeat-x;
+    background: url("body_bg.png") top left repeat-x;
 }
 
 /* HEADER */
@@ -109,7 +109,7 @@ div#container-wrap {
     position: relative;
     z-index: 10;
     padding-bottom: 22px; /* FOR MENU */
-    background: url(/local--files/component:theme/logo.png) 10px 40px no-repeat;
+    background: url("logo.png") 10px 40px no-repeat;
 }
 
 
