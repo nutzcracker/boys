@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Главная :: Список секретных объектов</title>
-	</head>
-	<body>
-		<h1>Объекты</h1>
-		<div>
-			{% if dossier_list %}
-		    <ul>
-		    {% for dossier in dossier_list %}
-		        <li><a href="{% url 'detail' dossier.id %}">{{ dossier.name }}</a></li>
-		    {% endfor %}
-		    </ul>
-			{% else %}
-		    	<p>No dossiers are available.</p>
-			{% endif %}
-		</div>
-	</body>
-</html>
+{% extends "layout/basic.html" %}
 
+{% block content %}
+<div id="main-content">
+                    <div id="action-area-top"></div>
+                    
+                    
+                        <div id="page-title" style="text-align: center;">
+                            Добро пожаловать на секретный сайт!
+                        </div>
+                    
+                    <div id="page-content">
+
+
+<p>На данном сайте вы сможете изучить секретных челиков из города Краснодар. Узнать их повадки, ареал обитания. Внимание, эта информация <strong>ОЧЕНЬ СЕКРЕТНАЯ</strong>. И кстати, с вас 15 гривен, отдайте их подозрительному торговцу информацией.</p>
+<p  style="text-align: center;"><img src="media/photos/secret.png"  style="height: 512px;" alt="Секретный агент" class="image"></p>
+</div>
+{% endblock %}

@@ -7,6 +7,7 @@ class Dossier(models.Model):
 	photo = models.ImageField(upload_to='photos', blank=True, verbose_name='Фото')
 	description = models.TextField(null=True, blank=True, verbose_name='Описание')
 
+
 	def __str__(self):
 		return self.name
 
@@ -16,8 +17,10 @@ class Dossier(models.Model):
 		ordering = ['name']
 
 class Category(models.Model):
-	cat_type = models.CharField(max_length=200, verbose_name='Класс объекта')
+	cat_type = models.CharField(max_length=200, verbose_name='Особенность')
+	cat_description = models.CharField(max_length=200,null=True, verbose_name='Описание особенности')
 	dossier = models.ManyToManyField('Dossier', blank=True)
+	
 
 	def __str__(self):
 		return self.cat_type

@@ -19,7 +19,7 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.index, name='index'),
     path('<int:dossier_id>', views.detail, name='detail'),
-    path('add/', views.DossierCreateView.as_view(), name='add')
+    path('add/', views.DossierCreateView.as_view(), name='add'),
+    path('', views.dossier_list, name='dossier_list')
 ]

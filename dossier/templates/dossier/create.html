@@ -1,16 +1,21 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Создание досье на объект :: Список объектов</title>
-	</head>
-	<body>
-		<h1>Добавление объекта</h1>
-		
-		<form method="post">
+{% extends "layout/basic.html" %}
+
+{% block content %}
+<div id="main-content">
+                    <div id="action-area-top"></div>
+                    
+                    
+                        <div id="page-title" style="text-align: center;">
+                            Добавление объекта в базу данных
+                        </div>
+                    
+                    <div id="page-content">
+
+
+<p><form method="post" enctype="multipart/form-data">
 			{% csrf_token %}
 			{{ form.as_p }}
 			<input type="submit" name="Добавить" value="Добавить дебика">
-		</form>
-	</body>
-</html>
+		</form></p>
+</div>
+{% endblock %}
