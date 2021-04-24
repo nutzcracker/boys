@@ -26,7 +26,7 @@ SECRET_KEY = '+xy6!gd-3^kt6*k=_ndglm0%-d+&mij&ur$m_&(ctl-&-0tab9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["zozolopo.pythonanywhere.com"]
+ALLOWED_HOSTS = ["zozolopo.pythonanywhere.com", "127.0.0.1"]
 
 
 # Application definition
